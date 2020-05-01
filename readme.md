@@ -34,7 +34,7 @@ pin = generate(today, { gender: 'male' }); // or 'female'
 
 ```js
 {
-  gender: '',    // '', 'male' or 'female',
+  gender: '',    // '' (random), 'male' or 'female',
   format: 'long' // 'long' or 'short'
 }
 ```
