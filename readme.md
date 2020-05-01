@@ -30,6 +30,17 @@ pin = generate({ gender: 'male' }); // or 'female'
 pin = generate(today, { gender: 'male' }); // or 'female'
 ```
 
+## Options
+
+```js
+{
+  gender: '',    // '', 'male' or 'female',
+  format: 'long' // 'long' or 'short'
+}
+```
+
+This package follows the [format specification](https://github.com/personnummer/meta#short-format).
+
 ## License
 
 MIT
