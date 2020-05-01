@@ -20,7 +20,7 @@ const today = new Date();
 // generate with date object
 let pin = generate(today);
 
-// generate with random date between now and the previous hundred years and the next hundred years.
+// generate with random date between now and the previous hundred years and the next hundred years
 pin = generate();
 
 // generate with specific gender
