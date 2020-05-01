@@ -1,17 +1,19 @@
 import babel from 'rollup-plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
 
 const commonConfig = {
   input: 'src/index.js',
   plugins: [
+    resolve(),
     babel({
       exclude: 'node_modules/**',
-      runtimeHelpers: true,
+      runtimeHelpers: true
     }),
     commonjs({
       ignoreGlobal: true,
     }),
-  ],
+  ]
 };
 
 export default [
@@ -19,14 +21,14 @@ export default [
     ...commonConfig,
     output: {
       dir: 'lib/cjs',
-      format: 'cjs',
+      format: 'cjs'
     },
   },
   {
     ...commonConfig,
     output: {
       dir: 'lib/esm',
-      format: 'esm',
+      format: 'esm'
     },
   },
 ];
