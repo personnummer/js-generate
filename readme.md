@@ -26,7 +26,7 @@ pin = generate();
 // generate with specific gender
 pin = generate({ gender: 'male' }); // or 'female'
 
-// generate with specific gender and with date object
+// generate with date object and with specific gender
 pin = generate(today, { gender: 'male' }); // or 'female'
 ```
 
