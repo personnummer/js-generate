@@ -39,7 +39,7 @@ pin = generate(today, { gender: 'male' }); // or 'female'
 }
 ```
 
-This package follows the [format specification](https://github.com/personnummer/meta#short-format).
+This package follows the output format [specification](https://github.com/personnummer/meta#short-format).
 
 ## License
 
