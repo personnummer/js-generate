@@ -1,7 +1,5 @@
 # generate [![Build Status](https://github.com/personnummer/js-generate/workflows/build/badge.svg)](https://github.com/personnummer/js-generate/actions)
 
-> work in progress
-
 Generate Swedish Personal Identity Numbers.
 
 ## Installation
