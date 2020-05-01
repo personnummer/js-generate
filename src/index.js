@@ -75,7 +75,7 @@ export default (date, options = {}) => {
   options = Object.assign(
     {
       gender: '',
-      format: '',
+      format: 'long',
     },
     options || {}
   );
@@ -100,5 +100,19 @@ export default (date, options = {}) => {
     '' + randomNumber(options.gender)
   }${'' + randomNumber(options.gender)}${'' + randomNumber(options.gender)}`;
 
-  return `${c}${pin}${luhn(pin)}`;
+  const full = `${c}${pin}${luhn(pin)}`;
+
+  if (options.format === 'long') {
+    return full;
+  }
+
+  let sep = '+';
+  if (new Date().getFullYear() - parseInt(full.slice(0, 4), 10) < 100) {
+    sep = '-';
+  }
+
+  return `${full.slice(2, 4)}${full.slice(4, 6)}${full.slice(
+    6,
+    8
+  )}${sep}${full.slice(8)}`;
 };
