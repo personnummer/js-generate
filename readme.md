@@ -24,10 +24,10 @@ let pin = generate(today);
 pin = generate();
 
 // generate with specific gender
-pin = generate('male'); // or 'female'
+pin = generate({ gender: 'male' }); // or 'female'
 
 // generate with specific gender and with date object
-pin = generate(today, 'male'); // or 'female'
+pin = generate(today, { gender: 'male' }); // or 'female'
 ```
 
 ## License

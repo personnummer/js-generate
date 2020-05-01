@@ -53,11 +53,11 @@ const luhn = (str) => {
  * Generate Swedish Swedish Personal Identity Number.
  *
  * @param  {object} date
- * @param  {string} gender
+ * @param  {object} options
  *
  * @return {string}
  */
-export default (date, gender) => {
+export default (date, options = {}) => {
   let y = 0,
     m = 0,
     d = 0;
@@ -67,12 +67,18 @@ export default (date, gender) => {
     y = date.getFullYear();
     m = date.getMonth() + 1;
     d = date.getDate();
-  }
-
-  if (typeof date === 'string') {
-    gender = date;
+  } else if (typeof date === 'object') {
+    options = date;
     date = undefined;
   }
+
+  options = Object.assign(
+    {
+      gender: '',
+      format: '',
+    },
+    options || {}
+  );
 
   // random date.
   if (!date) {
@@ -90,9 +96,9 @@ export default (date, gender) => {
     y = y.slice(2, 4);
   }
 
-  const pin = `${y}${padZero(m)}${padZero(d)}${'' + randomNumber(gender)}${
-    '' + randomNumber(gender)
-  }${'' + randomNumber(gender)}`;
+  const pin = `${y}${padZero(m)}${padZero(d)}${
+    '' + randomNumber(options.gender)
+  }${'' + randomNumber(options.gender)}${'' + randomNumber(options.gender)}`;
 
   return `${c}${pin}${luhn(pin)}`;
 };

@@ -27,7 +27,7 @@ describe('generate', () => {
 
   test('generate male personnummer with random date', () => {
     for (let i = 0, l = 3; i < l; i++) {
-      const pin = generate('male');
+      const pin = generate({ gender: 'male' });
       const p = personnummer.parse(pin);
       expect(p.isMale()).toEqual(true);
       expect(p.isFemale()).toEqual(false);
@@ -37,7 +37,7 @@ describe('generate', () => {
   test('generate male personnummer with specific date', () => {
     const today = new Date();
     for (let i = 0, l = 3; i < l; i++) {
-      const pin = generate(today, 'male');
+      const pin = generate(today, { gender: 'male' });
       const p = personnummer.parse(pin);
       expect(p.isMale()).toEqual(true);
       expect(p.isFemale()).toEqual(false);
@@ -46,7 +46,7 @@ describe('generate', () => {
 
   test('generate female personnummer with random date', () => {
     for (let i = 0, l = 3; i < l; i++) {
-      const pin = generate('female');
+      const pin = generate({ gender: 'female' });
       const p = personnummer.parse(pin);
       expect(p.isMale()).toEqual(false);
       expect(p.isFemale()).toEqual(true);
@@ -56,7 +56,7 @@ describe('generate', () => {
   test('generate female personnummer with specific date', () => {
     const today = new Date();
     for (let i = 0, l = 3; i < l; i++) {
-      const pin = generate(today, 'female');
+      const pin = generate(today, { gender: 'female' });
       const p = personnummer.parse(pin);
       expect(p.isMale()).toEqual(false);
       expect(p.isFemale()).toEqual(true);
