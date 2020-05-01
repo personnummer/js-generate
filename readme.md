@@ -20,15 +20,14 @@ const today = new Date();
 // generate with date object
 let pin = generate(today);
 
-const y = today.getFullYear();
-const m = today.getMonth() + 1;
-const d = today.getDate();
-
-// generate with numbers arguments.
-pin = generate(y, m, d);
-
 // generate with random date between now and the previous hundred years and the next hundred years.
 pin = generate();
+
+// generate with specific gender
+pin = generate('male'); // or 'female'
+
+// generate with specific gender and with date object
+pin = generate(today, 'male'); // or 'female'
 ```
 
 ## License

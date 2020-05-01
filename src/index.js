@@ -1,4 +1,23 @@
-const randomNumber = () => Math.floor(Math.random() * 9);
+const randomNumber = (gender) => {
+  let num = Math.floor(Math.random() * 9);
+
+  switch (gender) {
+    case 'male':
+      if (num % 2 === 0) {
+        num += 1;
+      }
+      break;
+    case 'female':
+      if (num % 2 !== 0) {
+        num += 1;
+      }
+      break;
+    default:
+      break;
+  }
+
+  return num;
+};
 
 const randomDate = () => {
   const year = new Date().getFullYear();
@@ -33,30 +52,34 @@ const luhn = (str) => {
 /**
  * Generate Swedish Swedish Personal Identity Number.
  *
- * @param  {number|date} y Year
- * @param  {number}      m Month
- * @param  {number}      d Day
+ * @param  {date}   date
+ * @param  {string} gender
  *
  * @return {string}
  */
-export default (y, m, d) => {
+export default (date, gender) => {
+  let y = 0,
+    m = 0,
+    d = 0;
+
   // with date object.
-  if (y instanceof Date) {
-    m = y.getMonth() + 1;
-    d = y.getDate();
-    y = y.getFullYear();
+  if (date instanceof Date) {
+    y = date.getFullYear();
+    m = date.getMonth() + 1;
+    d = date.getDate();
+  }
+
+  if (typeof date === 'string') {
+    gender = date;
+    date = undefined;
   }
 
   // random date.
-  if (!y) {
+  if (!date) {
     const rd = randomDate();
     y = rd.getFullYear();
     m = rd.getMonth() + 1;
     d = rd.getDate();
-  }
-
-  if (isNaN(y) || isNaN(m) || isNaN(d)) {
-    throw new Error('Input arguments is not a numbers or a date object.');
   }
 
   let c = '';
@@ -67,9 +90,9 @@ export default (y, m, d) => {
     y = y.slice(2, 4);
   }
 
-  const pin = `${y}${padZero(m)}${padZero(d)}${'' + randomNumber()}${
-    '' + randomNumber()
-  }${'' + randomNumber()}`;
+  const pin = `${y}${padZero(m)}${padZero(d)}${'' + randomNumber(gender)}${
+    '' + randomNumber(gender)
+  }${'' + randomNumber(gender)}`;
 
   return `${c}${pin}${luhn(pin)}`;
 };
