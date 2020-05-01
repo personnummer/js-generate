@@ -7,7 +7,7 @@ Generate Swedish Personal Identity Numbers.
 ## Installation
 
 ```
-npm install --save @personnummer/generate
+npm install @personnummer/generate
 ```
 
 ## Usage
