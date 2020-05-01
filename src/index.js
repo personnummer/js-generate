@@ -52,7 +52,7 @@ const luhn = (str) => {
 /**
  * Generate Swedish Swedish Personal Identity Number.
  *
- * @param  {date}   date
+ * @param  {object} date
  * @param  {string} gender
  *
  * @return {string}
