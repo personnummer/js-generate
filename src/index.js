@@ -96,8 +96,13 @@ export default (date, options = {}) => {
     y = y.slice(2, 4);
   }
 
+  let f = randomNumber(options.gender)
+  while (f === 0) {
+    f = randomNumber(options.gender);
+  }
+
   const pin = `${y}${padZero(m)}${padZero(d)}${
-    '' + randomNumber(options.gender)
+    '' + f
   }${'' + randomNumber(options.gender)}${'' + randomNumber(options.gender)}`;
 
   const full = `${c}${pin}${luhn(pin)}`;
