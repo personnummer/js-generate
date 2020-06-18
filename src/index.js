@@ -31,6 +31,12 @@ const randomDate = () => {
 
 const padZero = (i) => (i < 10 ? `0${i}` : i);
 
+const generateSerial = (gender) =>
+  '' +
+  randomNumber(gender) +
+  ('' + randomNumber(gender)) +
+  ('' + randomNumber(gender));
+
 const luhn = (str) => {
   let v = 0;
   let sum = 0;
@@ -96,16 +102,10 @@ export default (date, options = {}) => {
     y = y.slice(2, 4);
   }
 
-  let serial =
-    ('' + randomNumber(options.gender)) +
-      ('' + randomNumber(options.gender)) +
-      ('' + randomNumber(options.gender));
+  let serial = generateSerial(options.gender);
 
   while (serial === '000') {
-    serial =
-    ('' + randomNumber(options.gender)) +
-      ('' + randomNumber(options.gender)) +
-      ('' + randomNumber(options.gender));
+    serial = generateSerial(options.gender);
   }
 
   const pin = `${y}${padZero(m)}${padZero(d)}${serial}`;
