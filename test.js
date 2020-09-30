@@ -28,7 +28,7 @@ describe('generate', () => {
   test('generate personnummer with random date and short format', () => {
     for (let i = 0, l = 3; i < l; i++) {
       const pin = generate({
-        format: 'short',
+        format: 'short'
       });
       const p = personnummer.parse(pin);
       expect(pin).toEqual(expect.stringContaining(p.sep));

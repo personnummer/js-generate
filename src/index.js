@@ -64,9 +64,9 @@ const luhn = (str) => {
  * @return {string}
  */
 export default (date, options = {}) => {
-  let y = 0,
-    m = 0,
-    d = 0;
+  let y = 0;
+  let m = 0;
+  let d = 0;
 
   // with date object.
   if (date instanceof Date) {
@@ -81,7 +81,7 @@ export default (date, options = {}) => {
   options = Object.assign(
     {
       gender: '',
-      format: 'long',
+      format: 'long'
     },
     options || {}
   );
