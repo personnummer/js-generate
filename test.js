@@ -19,7 +19,7 @@ describe('generate', () => {
     for (let i = 0, l = 3; i < l; i++) {
       const pin = generate(today);
       expect(+pin.slice(0, 4)).toEqual(y);
-      expect(pin.slice(4, 6)).toEqual(padZero(m));
+      expect(pin.slice(4, 6)).toEqual('' + padZero(m));
       expect(pin.slice(6, 8)).toEqual('' + padZero(d));
       expect(personnummer.valid(pin)).toEqual(true);
     }
@@ -28,7 +28,7 @@ describe('generate', () => {
   test('generate personnummer with random date and short format', () => {
     for (let i = 0, l = 3; i < l; i++) {
       const pin = generate({
-        format: 'short',
+        format: 'short'
       });
       const p = personnummer.parse(pin);
       expect(pin).toEqual(expect.stringContaining(p.sep));

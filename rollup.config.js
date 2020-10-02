@@ -20,6 +20,7 @@ export default [
   {
     ...commonConfig,
     output: {
+      exports: 'auto',
       dir: 'lib/cjs',
       format: 'cjs'
     },
