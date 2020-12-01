@@ -35,7 +35,7 @@
     "@babel/eslint-parser": "^7.11.5",
     "@babel/runtime-corejs3": "^7.11.2",
     "@jitesoft/babel-preset-main": "^2.5.3",
-    "@rollup/plugin-commonjs": "^16.0.0",
+    "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^10.0.0",
     "babel-loader": "^8.1.0",
     "core-js": "^3.6.5",
