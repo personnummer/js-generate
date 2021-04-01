@@ -1,7 +1,9 @@
-import generate from './src';
 import personnummer from 'personnummer';
 
-const padZero = (i) => (i < 10 ? `0${i}` : i);
+const lib = require(process.env.FILE);
+const generate = lib.default ? lib.default : lib;
+
+const padZero = (i: number): string => (i < 10 ? `0${i}` : `${i}`);
 
 describe('generate', () => {
   test('generate personnummer with random date', () => {
@@ -28,7 +30,7 @@ describe('generate', () => {
   test('generate personnummer with random date and short format', () => {
     for (let i = 0, l = 3; i < l; i++) {
       const pin = generate({
-        format: 'short'
+        format: 'short',
       });
       const p = personnummer.parse(pin);
       expect(pin).toEqual(expect.stringContaining(p.sep));

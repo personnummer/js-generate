@@ -1,4 +1,9 @@
-const randomNumber = (gender) => {
+type Options = {
+  gender: string;
+  format: string;
+};
+
+const randomNumber = (gender: string) => {
   let num = Math.floor(Math.random() * 9);
 
   switch (gender) {
@@ -19,7 +24,7 @@ const randomNumber = (gender) => {
   return num;
 };
 
-const randomDate = () => {
+const randomDate = (): Date => {
   const year = new Date().getFullYear();
   const start = new Date(year - 100, 1, 1);
   const end = new Date(year + 100, 1, 1);
@@ -29,16 +34,16 @@ const randomDate = () => {
   );
 };
 
-const padZero = (i) => (i < 10 ? `0${i}` : i);
+const padZero = (i: number): string => (i < 10 ? `0${i}` : `${i}`);
 
-const generateSerial = (gender) =>
+const generateSerial = (gender: string): string =>
   '' +
   randomNumber(gender) +
   ('' + randomNumber(gender)) +
   ('' + randomNumber(gender));
 
-const luhn = (str) => {
-  let v = 0;
+const luhn = (str: string): number => {
+  let v: any = 0;
   let sum = 0;
 
   str += '';
@@ -63,36 +68,30 @@ const luhn = (str) => {
  *
  * @return {string}
  */
-export default (date, options = {}) => {
-  let y = 0;
-  let m = 0;
-  let d = 0;
+export default (
+  date: Date | Partial<Options>,
+  options: Partial<Options> = {}
+): string => {
+  let y: any = 0;
+  let m: any = 0;
+  let d: any = 0;
 
-  // with date object.
-  if (date instanceof Date) {
-    y = date.getFullYear();
-    m = date.getMonth() + 1;
-    d = date.getDate();
-  } else if (typeof date === 'object') {
-    options = date;
-    date = undefined;
+  if (!(date instanceof Date)) {
+    options = date as Partial<Options>;
+    date = randomDate();
   }
+
+  y = date.getFullYear();
+  m = date.getMonth() + 1;
+  d = date.getDate();
 
   options = Object.assign(
     {
       gender: '',
-      format: 'long'
+      format: 'long',
     },
     options || {}
   );
-
-  // random date.
-  if (!date) {
-    const rd = randomDate();
-    y = rd.getFullYear();
-    m = rd.getMonth() + 1;
-    d = rd.getDate();
-  }
 
   let c = '';
 
@@ -102,10 +101,10 @@ export default (date, options = {}) => {
     y = y.slice(2, 4);
   }
 
-  let serial = generateSerial(options.gender);
+  let serial = generateSerial(options.gender || '');
 
   while (serial === '000') {
-    serial = generateSerial(options.gender);
+    serial = generateSerial(options.gender || '');
   }
 
   const pin = `${y}${padZero(m)}${padZero(d)}${serial}`;
