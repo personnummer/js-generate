@@ -535,25 +535,25 @@
     "@nodelib/fs.scandir" "2.1.4"
     fastq "^1.6.0"
 
-"@pinefile/pine@^1.0.0-alpha.25":
-  version "1.0.0-alpha.25"
-  resolved "https://registry.yarnpkg.com/@pinefile/pine/-/pine-1.0.0-alpha.25.tgz#0806ba5ac465830e02f44dd5a7fe1658fc0036b6"
-  integrity sha512-c2EnAUbuPzeo8JNJ3Nqy2rUJ59QCEX8/DmmKK8QVa5iX1LCzvJgT+SGTkk1Xsa860xghMu7dLLP4xnoSqHgOhQ==
+"@pinefile/pine@^1.0.0-alpha.26":
+  version "1.0.0-alpha.26"
+  resolved "https://registry.yarnpkg.com/@pinefile/pine/-/pine-1.0.0-alpha.26.tgz#2c5484c9924483049037db7212e53103ff0b961a"
+  integrity sha512-NsdsgTmMnyX/QnyWeokPrivQ2o9hFdk2sy5zGCG1pTOtHBBVAJf9eCjm0sgehVJcWbxYB7Doy7ESv+bU3GBCIg==
   dependencies:
-    "@pinefile/utils" "^1.0.0-alpha.25"
+    "@pinefile/utils" "^1.0.0-alpha.26"
     bach "^1.2.0"
     chalk "^4.1.1"
-    core-js "^3.11.0"
-    date-fns "^2.21.1"
-    dotenv "^8.2.0"
+    core-js "^3.12.0"
+    date-fns "^2.21.2"
+    dotenv "^9.0.0"
     execa "^5.0.0"
     pify "^5.0.0"
-    yargs "^16.2.0"
+    yargs "^17.0.1"
 
-"@pinefile/utils@^1.0.0-alpha.25":
-  version "1.0.0-alpha.25"
-  resolved "https://registry.yarnpkg.com/@pinefile/utils/-/utils-1.0.0-alpha.25.tgz#f1118e5ea120d99aa0944606db723a3d8d0009ea"
-  integrity sha512-WW4GhMGwLH498pPIAd2GBONgPfhb9VsboA6jjDe/oOdaiU5TgBjX/Ab1qdAnxtyDT7egfE7AQAfVRYosQ6lnjQ==
+"@pinefile/utils@^1.0.0-alpha.26":
+  version "1.0.0-alpha.26"
+  resolved "https://registry.yarnpkg.com/@pinefile/utils/-/utils-1.0.0-alpha.26.tgz#927a59c8f16c31ff7aa5568acf43015bd3d3ee8c"
+  integrity sha512-KnXUOFIkgi9CMxSQVQdFsAMR1ROZ8u3ABh4RwREsbNDFFHdfxEq/90WEAi3dP/kwTV8fB310eX8pJcUrmqvYmA==
   dependencies:
     deepmerge "^4.2.2"
 
@@ -1338,7 +1338,7 @@ copy-descriptor@^0.1.0:
   resolved "https://registry.yarnpkg.com/copy-descriptor/-/copy-descriptor-0.1.1.tgz#676f6eb3c39997c2ee1ac3a924fd6124748f578d"
   integrity sha1-Z29us8OZl8LuGsOpJP1hJHSPV40=
 
-core-js@^3.11.0, core-js@^3.12.0:
+core-js@^3.12.0:
   version "3.12.0"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.12.0.tgz#62bac86f7d7f087d40dba3e90a211c2c3c8559ea"
   integrity sha512-SaMnchL//WwU2Ot1hhkPflE8gzo7uq1FGvUJ8GKmi3TOU7rGTHIU+eir1WGf6qOtTyxdfdcp10yPdGZ59sQ3hw==
@@ -1401,7 +1401,7 @@ data-urls@^2.0.0:
     whatwg-mimetype "^2.3.0"
     whatwg-url "^8.0.0"
 
-date-fns@^2.21.1:
+date-fns@^2.21.2:
   version "2.21.2"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.21.2.tgz#9db92305cf00626e9122e56c72195b17725594aa"
   integrity sha512-FMkG7pIPx64mGIpS2LOb3Wp3O606H/hatoiz7G0oiYWai1izdM4tF1dd7QABv2NogkIDI4wxsfLLFQSuVvDHgA==
@@ -1510,10 +1510,10 @@ domexception@^2.0.1:
   dependencies:
     webidl-conversions "^5.0.0"
 
-dotenv@^8.2.0:
-  version "8.6.0"
-  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-8.6.0.tgz#061af664d19f7f4d8fc6e4ff9b584ce237adcb8b"
-  integrity sha512-IrPdXQsk2BbzvCBGBOTmmSH5SodmqZNt4ERAZDmW4CT+tL8VtvinqywuANaFu4bOMWki16nqf0e4oC0QIaDr/g==
+dotenv@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-9.0.0.tgz#2408af4e39378375b7eebe30b7b54989e36d6e46"
+  integrity sha512-yy3x9XjojW8ROTBePD25AcMoHqGHsvHmtfw8QWlpEXyMMXXPj6brUA464AptUvHuTPRmNz6Sd3ZLNLeJl6dHJA==
 
 ecc-jsbn@~0.1.1:
   version "0.1.2"
@@ -4474,10 +4474,10 @@ yargs@^15.4.1:
     y18n "^4.0.0"
     yargs-parser "^18.1.2"
 
-yargs@^16.2.0:
-  version "16.2.0"
-  resolved "https://registry.yarnpkg.com/yargs/-/yargs-16.2.0.tgz#1c82bf0f6b6a66eafce7ef30e376f49a12477f66"
-  integrity sha512-D1mvvtDG0L5ft/jGWkLpG1+m0eQxOfaBvTNELraWj22wSVUMWxZUvYgJYcKh6jGGIkJFhH4IZPQhR4TKpc8mBw==
+yargs@^17.0.1:
+  version "17.0.1"
+  resolved "https://registry.yarnpkg.com/yargs/-/yargs-17.0.1.tgz#6a1ced4ed5ee0b388010ba9fd67af83b9362e0bb"
+  integrity sha512-xBBulfCc8Y6gLFcrPvtqKz9hz8SO0l1Ni8GgDekvBX2ro0HRQImDGnikfc33cgzcYUSncapnNcZDjVFIH3f6KQ==
   dependencies:
     cliui "^7.0.2"
     escalade "^3.1.1"
