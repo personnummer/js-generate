@@ -43,7 +43,7 @@ const generateSerial = (gender: string): string =>
   ('' + randomNumber(gender));
 
 const luhn = (str: string): number => {
-  let v: any = 0;
+  let v = 0;
   let sum = 0;
 
   str += '';
@@ -72,9 +72,9 @@ export default (
   date: Date | Partial<Options>,
   options: Partial<Options> = {}
 ): string => {
-  let y: any = 0;
-  let m: any = 0;
-  let d: any = 0;
+  let y: number | string = 0;
+  let m = 0;
+  let d = 0;
 
   if (!(date instanceof Date)) {
     options = date as Partial<Options>;
