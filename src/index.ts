@@ -43,7 +43,8 @@ const generateSerial = (gender: string): string =>
   ('' + randomNumber(gender));
 
 const luhn = (str: string): number => {
-  let v = 0;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let v: any = 0;
   let sum = 0;
 
   str += '';
