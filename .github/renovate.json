@@ -1,12 +1,14 @@
 {
   "extends": [
-    "config:base",
-    ":preserveSemverRanges"
+    "config:base"
   ],
-  "packageRules": [
-    {
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "automerge": true
-    }
-  ]
+  "rangeStrategy": "bump",
+  "automerge": true,
+  "major": {
+    "automerge": false
+  },
+  "minor": {
+    "automerge": false
+  },
+  "separateMultipleMajor": true
 }
