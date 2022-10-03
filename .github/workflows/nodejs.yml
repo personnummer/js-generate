@@ -25,11 +25,11 @@ jobs:
     - name: npm run build
       run: npm run build
     - name: npm run test
-      run: FILE=./dist/cjs npm run jest
+      run: FILE=./dist/cjs npm run test
       env:
         CI: true
     - name: npm run test
-      run: FILE=./dist/esm npm run jest
+      run: FILE=./dist/esm npm run test
       env:
         CI: true
 
