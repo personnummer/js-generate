@@ -1,4 +1,4 @@
-# generate [![Build Status](https://img.shields.io/github/workflow/status/personnummer/js-generate/build)](https://github.com/personnummer/js-generate/actions) [![NPM Downloads](https://img.shields.io/npm/dm/@personnummer/generate.svg)](https://www.npmjs.com/package/@personnummer/generate)
+# generate [![Build Status](https://img.shields.io/github/actions/workflow/status/personnummer/js/nodejs.yml?branch=master)](https://github.com/personnummer/js-generate/actions) [![NPM Downloads](https://img.shields.io/npm/dm/@personnummer/generate.svg)](https://www.npmjs.com/package/@personnummer/generate)
 
 Generate Swedish Personal Identity Numbers.
 
