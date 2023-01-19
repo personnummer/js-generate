@@ -10,7 +10,7 @@
     "url": "git://github.com/personnummer/js-generate.git"
   },
   "files": [
-    "dist"
+    "dist/**/*"
   ],
   "scripts": {
     "build": "pine build",
