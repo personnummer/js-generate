@@ -1,6 +1,6 @@
 {
   "name": "@personnummer/generate",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Generate Swedish Personal Identity Numbers",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -10,7 +10,7 @@
     "url": "git://github.com/personnummer/js-generate.git"
   },
   "files": [
-    "dist"
+    "dist/**/*"
   ],
   "scripts": {
     "build": "pine build",
