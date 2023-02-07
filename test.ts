@@ -1,7 +1,7 @@
 import personnummer from 'personnummer';
 
 const lib = require(process.env.FILE);
-const generate = process.env.FILE?.includes('esm') ? lib.default : lib;
+const generate = process.env.FILE?.includes('cjs') ? lib : lib.default;
 
 const padZero = (i: number): string => (i < 10 ? `0${i}` : `${i}`);
 
