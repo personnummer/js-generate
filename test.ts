@@ -1,19 +1,21 @@
+import { describe, it, expect } from 'vitest';
 import personnummer from 'personnummer';
 
-const lib = require(process.env.FILE);
-const generate = process.env.FILE?.includes('cjs') ? lib : lib.default;
+const generate = process.env.FILE?.includes('cjs')
+  ? require(process.env.FILE)
+  : (await import(process.env.FILE)).default;
 
 const padZero = (i: number): string => (i < 10 ? `0${i}` : `${i}`);
 
 describe('generate', () => {
-  test('generate personnummer with random date', () => {
+  it('generate personnummer with random date', () => {
     for (let i = 0, l = 3; i < l; i++) {
       const pin = generate();
       expect(personnummer.valid(pin)).toEqual(true);
     }
   });
 
-  test('generate personnummer with specific date', () => {
+  it('generate personnummer with specific date', () => {
     const today = new Date();
     const y = today.getFullYear();
     const m = today.getMonth() + 1;
@@ -27,7 +29,7 @@ describe('generate', () => {
     }
   });
 
-  test('generate personnummer with random date and short format', () => {
+  it('generate personnummer with random date and short format', () => {
     for (let i = 0, l = 3; i < l; i++) {
       const pin = generate({
         format: 'short',
@@ -37,7 +39,7 @@ describe('generate', () => {
     }
   });
 
-  test('generate male personnummer with random date', () => {
+  it('generate male personnummer with random date', () => {
     for (let i = 0, l = 3; i < l; i++) {
       const pin = generate({ gender: 'male' });
       const p = personnummer.parse(pin);
@@ -46,7 +48,7 @@ describe('generate', () => {
     }
   });
 
-  test('generate male personnummer with specific date', () => {
+  it('generate male personnummer with specific date', () => {
     const today = new Date();
     for (let i = 0, l = 3; i < l; i++) {
       const pin = generate(today, { gender: 'male' });
@@ -56,7 +58,7 @@ describe('generate', () => {
     }
   });
 
-  test('generate female personnummer with random date', () => {
+  it('generate female personnummer with random date', () => {
     for (let i = 0, l = 3; i < l; i++) {
       const pin = generate({ gender: 'female' });
       const p = personnummer.parse(pin);
@@ -65,7 +67,7 @@ describe('generate', () => {
     }
   });
 
-  test('generate female personnummer with specific date', () => {
+  it('generate female personnummer with specific date', () => {
     const today = new Date();
     for (let i = 0, l = 3; i < l; i++) {
       const pin = generate(today, { gender: 'female' });
