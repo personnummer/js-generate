@@ -44,7 +44,7 @@
     "is-ci": "^3.0.1",
     "personnummer": "^3.2.1",
     "rimraf": "^5.0.1",
-    "typescript": "^5.1.5",
+    "typescript": "^5.1.6",
     "vitest": "^0.32.2"
   },
   "funding": {
