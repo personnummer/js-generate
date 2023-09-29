@@ -45,7 +45,7 @@
     "personnummer": "^3.2.1",
     "rimraf": "^5.0.5",
     "typescript": "^5.2.2",
-    "vitest": "^0.34.5"
+    "vitest": "^0.34.6"
   },
   "funding": {
     "type": "opencollective",
