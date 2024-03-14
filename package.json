@@ -17,6 +17,7 @@
   },
   "scripts": {
     "build": "pine build",
+    "format": "prettier --write 'src/**/*.ts'",
     "lint": "eslint src --ext .ts",
     "test": "pine test",
     "prepublishOnly": "npm run build"
@@ -45,6 +46,7 @@
     "@typescript-eslint/parser": "^7.2.0",
     "eslint": "^8.57.0",
     "is-ci": "^3.0.1",
+    "prettier": "^3.2.5",
     "personnummer": "^3.2.1",
     "rimraf": "^5.0.5",
     "typescript": "^5.4.2",

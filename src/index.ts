@@ -30,7 +30,7 @@ const randomDate = (): Date => {
   const end = new Date(year + 100, 1, 1);
 
   return new Date(
-    start.getTime() + Math.random() * (end.getTime() - start.getTime())
+    start.getTime() + Math.random() * (end.getTime() - start.getTime()),
   );
 };
 
@@ -71,7 +71,7 @@ const luhn = (str: string): number => {
  */
 const generate = (
   date: Date | Partial<Options>,
-  options: Partial<Options> = {}
+  options: Partial<Options> = {},
 ): string => {
   let y: number | string = 0;
   let m = 0;
@@ -91,7 +91,7 @@ const generate = (
       gender: '',
       format: 'long',
     },
-    options || {}
+    options || {},
   );
 
   let c = '';
@@ -123,7 +123,7 @@ const generate = (
 
   return `${full.slice(2, 4)}${full.slice(4, 6)}${full.slice(
     6,
-    8
+    8,
   )}${sep}${full.slice(8)}`;
 };
 
