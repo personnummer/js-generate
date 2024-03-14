@@ -69,7 +69,7 @@ const luhn = (str: string): number => {
  *
  * @return {string}
  */
-export default (
+const generate = (
   date: Date | Partial<Options>,
   options: Partial<Options> = {}
 ): string => {
@@ -126,3 +126,5 @@ export default (
     8
   )}${sep}${full.slice(8)}`;
 };
+
+export default generate;

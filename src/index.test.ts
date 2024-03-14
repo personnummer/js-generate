@@ -1,9 +1,10 @@
 import { describe, it, expect } from 'vitest';
 import personnummer from 'personnummer';
 
-const generate = process.env.FILE?.includes('cjs')
-  ? require(process.env.FILE)
-  : (await import(process.env.FILE)).default;
+const file = process.env.FILE || '.';
+const generate = file.includes('cjs')
+  ? require(file)
+  : (await import(file)).default;
 
 const padZero = (i: number): string => (i < 10 ? `0${i}` : `${i}`);
 

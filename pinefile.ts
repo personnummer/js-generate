@@ -22,7 +22,9 @@ export default {
     await build(buildOptions('esm'));
   },
   test: async () => {
-    const files = isCI ? ['./dist/cjs', './dist/esm'] : ['./src'];
+    const files = isCI
+      ? [__dirname + '/dist/cjs', __dirname + '/dist/esm']
+      : ['./src'];
 
     await series(
       files.map((file) => async () => {
