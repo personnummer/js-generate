@@ -50,7 +50,7 @@
     "personnummer": "^3.2.1",
     "rimraf": "^6.0.1",
     "typescript": "^5.6.2",
-    "vitest": "^2.0.5"
+    "vitest": "^2.1.0"
   },
   "funding": {
     "type": "opencollective",
