@@ -49,7 +49,7 @@
     "prettier": "^3.6.2",
     "personnummer": "^3.2.1",
     "rimraf": "^6.0.1",
-    "typescript": "^5.8.3",
+    "typescript": "^5.9.2",
     "vitest": "^3.2.4"
   },
   "funding": {
