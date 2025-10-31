@@ -48,7 +48,7 @@
     "is-ci": "^4.1.0",
     "prettier": "^3.6.2",
     "personnummer": "^3.2.1",
-    "rimraf": "^6.0.1",
+    "rimraf": "^6.1.0",
     "typescript": "^5.9.3",
     "vitest": "^4.0.5"
   },
