@@ -3,7 +3,8 @@ import personnummer from 'personnummer';
 
 const file = process.env.FILE || '.';
 const generate = file.includes('cjs')
-  ? require(file)
+  ? // eslint-disable-next-line
+    require(file)
   : (await import(file)).default;
 
 const padZero = (i: number): string => (i < 10 ? `0${i}` : `${i}`);

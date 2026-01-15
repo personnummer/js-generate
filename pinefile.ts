@@ -24,7 +24,7 @@ export default {
   test: async () => {
     const files = isCI
       ? [__dirname + '/dist/cjs', __dirname + '/dist/esm']
-      : ['./src'];
+      : [__dirname + '/src'];
 
     await series(
       files.map((file) => async () => {
