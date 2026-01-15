@@ -2,7 +2,7 @@ import { run, log, series } from '@pinefile/pine';
 import isCI from 'is-ci';
 import { build } from '@frozzare/pkg';
 
-const buildOptions = (format) => ({
+const buildOptions = (format: 'cjs' | 'esm') => ({
   entry: './src/index.ts',
   format,
   outfile: `./dist/${format}/index.js`,
@@ -30,7 +30,7 @@ export default {
       files.map((file) => async () => {
         log.info(`Running tests with ${file}\n`);
         await run(`FILE=${file} vitest`);
-      })
+      }),
     );
   },
 };
