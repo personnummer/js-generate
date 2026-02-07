@@ -42,7 +42,7 @@
     "@frozzare/pkg": "^1.1.0",
     "@pinefile/pine": "^3.0.0",
     "@types/jest": "^30.0.0",
-    "eslint": "^9.39.2",
+    "eslint": "^10.0.0",
     "is-ci": "^4.1.0",
     "prettier": "^3.8.1",
     "personnummer": "^3.2.1",
