@@ -43,14 +43,13 @@ const generateSerial = (gender: string): string =>
   ('' + randomNumber(gender));
 
 const luhn = (str: string): number => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  let v: any = 0;
+  let v: number;
   let sum = 0;
 
   str += '';
 
   for (let i = 0, l = str.length; i < l; i++) {
-    v = str[i];
+    v = Number(str[i]);
     v *= 2 - (i % 2);
     if (v > 9) {
       v -= 9;
@@ -73,9 +72,7 @@ const generate = (
   date: Date | Partial<Options>,
   options: Partial<Options> = {},
 ): string => {
-  let y: number | string = 0;
-  let m = 0;
-  let d = 0;
+  let y: number | string;
 
   if (!(date instanceof Date)) {
     options = date as Partial<Options>;
@@ -83,8 +80,9 @@ const generate = (
   }
 
   y = date.getFullYear();
-  m = date.getMonth() + 1;
-  d = date.getDate();
+
+  const m = date.getMonth() + 1;
+  const d = date.getDate();
 
   options = Object.assign(
     {
