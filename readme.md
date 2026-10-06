@@ -39,6 +39,10 @@ pin = generate(today, { gender: 'male' }); // or 'female'
 
 This package follows the output format [specification](https://github.com/personnummer/meta#short-format).
 
+## In memoriam
+
+Fredrik "Frozzare" Forsmo (1991-2026) was the initiator, co-founder and a core contributor of the personnummer project. This library carries his work. He is missed.
+
 ## License
 
 MIT
