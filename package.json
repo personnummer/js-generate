@@ -40,9 +40,9 @@
   "license": "MIT",
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@frozzare/pkg": "^1.1.0",
     "@pinefile/pine": "^3.0.0",
     "@types/jest": "^30.0.0",
+    "esbuild": "^0.27.7",
     "eslint": "^10.2.1",
     "is-ci": "^4.1.0",
     "personnummer": "^3.2.1",
